@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Note-Fetching Website
+Note: This project includes a feature to add notes with the provided API. I have only added notes for the IT field. You can add notes to other fields with the help of the API.
 
-## Getting Started
+Overview
+This website allows users to add, filter, and view notes based on their branch and semester. The website includes the following features:
 
-First, run the development server:
+An API to add notes.
+A form with three select inputs to filter notes by branch and semester.
+A dynamic third select input that shows only the notes related to the selected branch and semester.
+A page to display the notes PDF.
+A sidebar that shows all notes related to the branch and semester.
+Adding Notes
+To add notes, make a POST request to the following URL with the required body parameters:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+URL: note-fetching-task.vercel.app/api/addnotes
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Body:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+json
+Copy code
+{
+   "url": "https://drive.google.com/file/d/15cBQ8nU9HU5dU1YYXKB1kanGDY4rdPl/preview",
+   "subject": "javascript",
+   "branch": "it",
+   "semester": "4"
+}
+Using the Website
+Filtering Notes
+Branch Selection: Choose your branch from the first select input.
+Semester Selection: Select your semester from the second select input.
+Notes Selection: The third select input will dynamically display the notes related to the selected branch and semester.
+Viewing Notes
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Notes PDF: Navigate to the notes page to view the PDF of the selected note.
 
-## Learn More
+Sidebar: The sidebar displays all the notes related to the selected branch and semester, making it easy to switch between different notes.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

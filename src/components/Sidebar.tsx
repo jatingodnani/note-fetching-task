@@ -67,7 +67,7 @@ const Sidebar: React.FC = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="w-[20%] min-h-screen bg-gray-900 text-white flex flex-col items-center p-4">
+    <div className="md:w-[20%] w-[30%] min-h-screen bg-gray-900 text-white flex flex-col items-center p-4">
       {isLoading ? (
         <FaSpinner size={30} className="animate-spin" />
       ) : (
